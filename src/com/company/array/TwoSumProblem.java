@@ -4,6 +4,8 @@ import java.util.HashMap;
 
 public class TwoSumProblem {
     public static int[] twoSum(int[] nums, int target) {
+
+       //o(n)
         int[] ans = new int[2];
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
