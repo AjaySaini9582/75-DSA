@@ -1,18 +1,26 @@
 package com.company.array;
 
 public class MaxSumArray {
-    public static int MaxSum(int []nums){
-        int cur=nums[0];
-        int maxi=nums[0];
+    public static int maxVowels(String s, int k) {
+        int maxi=0;
+        int count=0;
+        int n=s.length();
 
-        for(int i=1;i<nums.length;i++){
-            cur=Math.max(nums[i],nums[i]+cur);
-            maxi=Math.max(maxi,cur);
+        for(int i=0;i<n-k;i++){
+            count=0;
+            for(int j=0;j<k;j++){
+                if(s.charAt(j)=='a' ||s.charAt(j)=='e'||s.charAt(j)=='i'||s.charAt(j)=='o'|| s.charAt(j)=='u' ){
+                    count++;
+                    maxi=Math.max(count,maxi);
+
+                }
+            }
         }
         return maxi;
     }
     public static void main(String[] args) {
-        int []nums={-2,1,-3,4,-1,2,1,-5,4};
-        System.out.println(MaxSumArray.MaxSum(nums));
+        String s="leetcode";
+        int k = 3;
+        System.out.println(MaxSumArray.maxVowels(s,k));
     }
 }
